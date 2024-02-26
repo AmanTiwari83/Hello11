@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HELLO 11</title>
+    <link href="{% static 'images/logo1.png'%}" rel="icon">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+</head>
+<style>
+
+    .fm{
+    font-family:Bell MT;
+    font-weight:bold;
+    }
+    .bg{
+    background: #fdb716;
+    }
+    .txt{
+    color: #fdb716;
+    }
+    .a{
+    min-height:500px;
+    background: #fdb716;
+    opacity:.8;
+    padding:7.5% 12%;
+    }
+    .form-control{
+    margin-bottom:3%;
+    }
+    .t1{
+    background-image:url('{% static 'images/back2.jpg'%}');
+    border-radius:10px;
+    }
+    .uline::after{
+    content:"";
+    height:2px;
+    width:95%;
+    background:#fdb716;
+    color:#fdb716;
+    margin-top:8% ;
+    display:block;
+    }
+    .t2{
+    background-image:linear-gradient(0deg,white,transparent),url('{% static 'images/img2.jpg'%}');
+    opacity:.7;
+    background-attachment:fixed;
+
+    background-size:cover;
+    }
+    .t3{
+    background-image:linear-gradient(0deg,black,transparent), url('{% static 'images/img3.jpg'%}');
+    opacity:1;
+    background-attachment:fixed;
+    }
+    .tline::before{
+    content:"";
+    height:2px;
+    margin-bottom:30px;
+    width:95%;
+    background:#fdb716;
+    color:#fdb716;
+    display:block;
+    }
+</style>
+<body>
+<div class="container-fluid overflow-hidden">
+    <div class="row">
+        <div class="col-12 bg-warning text-center fs-4 p-1">
+            <span style=" font-weight:bolder;">Contact No: +91 8303362534 | +91 9936074546</span>
+        </div>
+        <div class="col-sm-12 text-center bg-dark" style="max-height:170px; line-height:170px;">
+            <img src="{% static 'images/hellologo.png'%}" style="height:80%; margin:0px auto;">
+        </div>
+        <div class="col-sm-12 a">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{% static 'images/car.png'%}" class="img-fluid">
+                </div>
+                <div class="col-lg-6">
+                    <div style="font-size:4em; font-weight:bolder; color:black !important;">24X7 Cab Service In Khalilabad</div>
+                    <div class="fs-2 py-4" style="font-weight:500;">Safe, Reliable and Affordable</div>
+                    <div><button class="btn mt-2 btn-dark px-4 py-2" style="background:black;"><B>BOOK NOW</B></button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10 mx-auto text-end mt-5 my-3 py-2 px-5" style="background: #fdb716; color:white;">
+            New Booking
+        </div>
+        <div class="col-lg-6 p-5 mx-auto">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                            <h6 style="font-weight:bold">Select Date and Time</h6>
+                        <div class="col-sm-6">
+                            <input type="date" name="date" class="form-control">
+                        </div>
+                        <div class="col-sm-6 px-3">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <input type="number" name="hour" class="form-control">
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="number" name="minute" class="form-control">
+                                </div>
+                                <div class="col-sm-4 m-0">
+                                    <select name="time" class="form-control">
+                                <option>AM</option>
+                                <OPTION>PM</OPTION>
+                            </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <h6> Pick Up</h6>
+                    <input type="text" name="pick" placeholder="Start Typing Address" class="form-control p-2">
+                </div>
+                <div class="col-12">
+                    <h6> Drop Off</h6>
+                    <input type="text" name="drop" placeholder="Start Typing Address" class="form-control p-2">
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h6 class="font-weight:bold;">Adults Seats</h6>
+                            <select name="adult" class="form-control">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <h6 class="font-weight:bold;">Suitcases</h6>
+                            <select name="suitcase" class="form-control">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <BUTTON class="btn btn-warning px-4 py-2">See Price</BUTTON>
+                </div>
+            </div>
+        </div>
+        <div class="py-5">
+        <h2 class="text-center fm" style="font-size:50px; font-weight:bold;">Best Outstation Taxi Service in Khalilabad</h2>
+        <div class="px-5 py-2">
+            <div style="height:5px; background: #fdb716; margin:0px 5%;"></div>
+        </div>
+        <div class="col-lg-10 py-4 p-4 mx-auto">
+            <div class="row">
+                {% for i in vehicle %}
+                <div class="col-lg-4">
+                    <div class="card border border-0">
+                        <img src="/{{i.vehicleimage}}" style="height:120%; width:100%;">
+                        <div class="card-body p-2 px-5">
+                            <span style="font-size:40px; font-weight:bold;" class="txt">{{i.rent}}/</span><sup class="fs-6">per KM</sup><br>
+                            <b class="txt" style="padding-left:20%;"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </b>
+                            <div style="height:2px; background: #fdb716; ; padding:0px; margin:10px auto; "></div>
+                            <p style="font-size:18px;" class="text-center">{{i.vehicle1}}, {{i.vehicle2}},<br>{{i.vehicle3}}, Tata Tigor</p>
+                            <button class="form-control btn btn-outline-warning my-3 px-4 py-2">BOOK NOW</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+            </div>
+        <div class="col-sm-12 t1" >
+<!--            <img src="{% static 'images/back2.jpg'%}" style="height:200px; width:100%;" class="img-fluid">-->
+            <div class="row">
+                <div class="col-md-10 col-sm-12 mx-auto bg px-5" style="border-radius:20px;">
+                    <div class="row">
+                        <div class="col-8 pt-5 fm" style="padding-left:4%;"><h1 style="font-weight:bold;">Local Small Vehicle</h1></div>
+                        <div class="col-4 px-5 text-end">
+                            <img src="{% static 'images/swift.png'%}" class="img-fluid" style="height:100px; min-width:100px;">
+                        </div>
+                    </div>
+                    <div class="row py-3 text-justify px-2">
+                        <div class="col-lg-6  my-3 px-5">
+                            <div class="row">
+                                <div class="col-sm-7 ">
+                                    <h4>8 Hour 80 KM Per Day</h4>
+                                </div>
+                                <div class="col-sm-5">
+                                    <button class="btn btn-dark px-5 py-2 " style="font-weight:bold">1500</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6  my-3 px-5">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <h4>10 Hour 100 KM Per Day</h4>
+                                </div>
+                                <div class="col-sm-5">
+                                    <button class="btn btn-dark px-5 py-2 " style="font-weight:bold">1500</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row px-5 py-3">
+                        <div class="col-md-4 p-2">
+                           <div style="font-size:18px;"> <span ><i class="fa fa-check" style="font-weight:bolder;"></i> </span>
+                               &nbsp;Driver Night Charges Applicable 10 <span class="px-4"> PM to 6 AM : Rs.250</span></div>
+                        </div>
+                        <div class="col-md-4 p-2">
+                           <div style="font-size:18px;"> <span ><i class="fa fa-check" style="font-weight:bolder;"></i> </span>
+                               &nbsp; Minimum Journey 250KM 24 Hour</div>
+                        </div>
+                        <div class="col-md-4 p-2">
+                           <div style="font-size:18px;"> <span ><i class="fa fa-check" style="font-weight:bolder;"></i> </span>
+                               &nbsp; Toll Charges Additional</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 t2" >
+            <div class="row">
+                <div class="col-sm-10 mx-auto p-3 px-5">
+                    <div class="pt-5"><H5 style="font-weight:bolder; font-size:30px; font-family:Bell MT;">Our Services</H5>
+                    <h1 class="txt py-2" style=" font-size:60px; font-weight:bold; padding-right:30%; font-family:Bell MT;">We offer cab renting services  for special occasions</h1></div>
+                    <div class="row py-4 px-2">
+                        {% for i in ourservice %}
+                    <div class="col-lg-3">
+                        <div  style="border-width:2px 0px 0px 0px; border-style:solid; border-color:#fdb716;">
+                            <h2 class="fm my-4" style="font-weight:bolder !important;">{{i.heading}}</h2>
+                        <p>"{{i.des | safe}}"
+                            </p>
+                        <p class="py-3"><I CLASS="fa fa-angle-right"></I><span style="font-weight:bold; padding-left:2%;"> BOOK NOW</span></p>
+                        </div>
+                    </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 p-0">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="{% static 'images/img2.jpg'%}" class="img-fluid" style="max-height:900px; width:100%">
+                </div>
+                <div class="col-lg-8 p-5">
+                    <div class="pt-5"><H5 style="font-weight:bolder; font-size:30px; font-family:Bell MT;">Why Choose Us</H5>
+                        <h1 class="txt py-2" style=" font-size:60px; font-weight:bold; font-family:Bell MT;">Explore first class Cab <br> Service and Comfort Ride</h1>
+                        <h5>Your Destination, Our Priority, Reason to select our Cab Services</h5>
+                        <div class="row mt-5 py-3">
+                            <div class="col-lg-3  col-sm-6 mx-auto">
+                                <div class="txt" style="font-size:110px; font-family:Bernard MT Condensed; font-weight:bold;">1.</div>
+                                <div class="fm"><h5  style="font-weight:bold; padding-left:3%;">Professional Car Driver</h5></div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6  mx-auto">
+                                <div class="txt" style="font-size:110px; font-family:Bernard MT Condensed; font-weight:bold;">2.</div>
+                                <div class="fm"><h5  style="font-weight:bolder; padding-left:3%;">Fixed Prices and Bonuses</h5></div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6  mx-auto">
+                                <div class="txt" style="font-size:110px; font-family:Bernard MT Condensed; font-weight:bold;">3.</div>
+                                <div class="fm"><h5  style="font-weight:bolder; padding-left:3%;">Fast Car Delivery Service</h5></div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6  mx-auto">
+                                <div class="txt" style="font-size:110px; font-family:Bernard MT Condensed; font-weight:bold;">4.</div>
+                                <div class="fm"><h5  style="font-weight:bolder; padding-left:3%;">Comfort & Safe Ride</h5></div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="col-lg-12 p-5" style="background:#f6f2f4;">
+            <div class="row">
+                <div class="col-lg-10 mx-auto  my-2 p-5 px-3">
+                    <h1 class="txt my-2 fm" style="font-size:60px; font-weight:bold;">Testimonials</h1>
+                    <hr style="height:10px; font-weight:bold;">
+                    <div class="row my-3">
+                        {% for i in testimonials %}
+                        <div class="col-lg-4 p-4">
+                            <div class="row">
+                                <div class="col-md-12"  >
+                                    <p style="font-size:15px;" class="txt my-4"><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i> </p>
+                                    <p class="uline">
+                                    "{{i.desc}}"
+                                    </p>
+                                    <div class="py-3">
+                                        <img src="/{{i.picture}}" style="height:50px; width:50px; border-radius:50%;"><h5 class="fm" style="display:inline; padding-left:5%; font-weight:800 !important;">
+                                        {{i.name}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 t3">
+            <div class="row">
+                <div class="col-sm-10 mx-auto p-5 text-justify">
+                    <div class="" style="margin:10% 0px;">
+                        <h1 class="txt fm" style="font-size:80px;">Taking you anywhere you can imagine</h1>
+                        <h2 class="text-light fm pr-5" > Not Only to parties, wedding, casionos and birthdays, but anywhere you want to go. </h2>
+                        <div class="row py-4">
+                            <div class="col-lg-3 py-2 text-justify">
+                                <button class="px-5 py-3 btn-outline-warning " style="border-radius:none; border-width:3px; color: #fdb716; background:transparent; border-color: #fdb716;"><B>RENT ONLINE</B></button>
+                            </div>
+                            <div class="col-lg-9 py-1  px-5 text-justify">
+                                <h5 class="fm text-light">Or give us a call:</h5>
+                                <h3 class="txt">+91 8303362534 | +91 9658911311 | +91 9628911311</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-lg-10 mx-auto p-5">
+                    <div class="row my-5">
+                        <div class="col-lg-4 text-justify p-2">
+                            <div class="row">
+                                <div class="col-12 py-4" >
+                                    <h2 class="fm mb-3 tline">Get in Touch</h2>
+                                    <p>Contact Hello11.in For Instant Cab Services</p>
+                                    <p><i class="fa fa-phone txt"></i> 9628911211</p>
+                                    <p><i class="fa fa-envelope txt"></i> info@hello11.in</p>
+                                    <p><i class="fa fa-location-dot txt"></i>  Infront of Daak Bangle 2nd Floor Block Building<br>
+                                    &nbsp; &nbsp; Khalilabad, Sant Kabir Nagar - 272175</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 p-2">
+                            <div class="row">
+                                <div class="col-12 py-4">
+                                    <h2 class="tline fm">Messge Us</h2>
+                                    <form method="get">
+                                        {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="row my-3">
+                                                <div class="col-sm-6">
+                                                    <b>First Name</b>
+                                                    <input type="text" required name="fname" class="form-control">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <b>Last Name</b>
+                                                    <input type="text" name="lname" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <b>Email</b>
+                                            <input type="email" required name="email" class="form-control">
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <b>Message</b>
+                                            <textarea rows="4" required name="message" class="form-control" style="resize:none !important;"></textarea>
+                                        </div>
+                                        <div><input type="submit" value="Submit" class="btn btn-outline-warning px-5 py-2"></div>
+                                    </div>
+                                        </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height:1px ; background:black;"></div>
+        <div class="col-sm-12 bg" style="min-height:100px; line-height:100px; padding:0px 10%;">
+            <p style="blue">Copywrite &copy; 2023 Hello11 | Powered by {{data}}
+            <span class="text-end" style="padding-left:40%;">
+                <i class="fa-brands fa-square-whatsapp"></i> Whatsapp &nbsp;&nbsp;
+                <i class="fa-brands fa-square-whatsapp"></i> Instagram
+            </span></p>
+        </div>
+    </div>
+    </div>\</div>
+</body>
+</html>
