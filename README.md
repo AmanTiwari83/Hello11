@@ -3,7 +3,7 @@
 Khalilabad is a small town in Sant Kabir Nagar which is a district of Uttar Pradrsh. </p>
 <h3><u>About This Project - </u></h3>
 <p>This project is developed by <b>Aman Tiwari </b> by  using the technologies like <b><U>HTML </U></b>, <b><U>CSS</U></b> , <b><U>JavaScript</U></b> , <b><U>Bootstrap</U></b> , <b><U>Python</U></b> and <b><U>Django</U></b> . This project is fully <b> Responsive </b> and <B> Dynamic .</B> The backend of this is Developed by using <B> Django </B> which is a Python's Web Framework. </p>
-<h3>The First Look of the Website - </h3>
+<h3 styele='TEXT-DECORATION:"UNDERLINE"'>The First Look of the Website - </h3>
 <img src="https://github.com/AmanTiwari83/Hello11/assets/155237355/f2898176-12dd-416b-8714-abe3424bc610" alt="abc"/>
 <h3>About the Price Range of vehicle - </h3>
 <img src="https://github.com/AmanTiwari83/Hello11/assets/155237355/6df310a2-5eb1-413f-8675-8949086d2be8" alt="abc"/>
